@@ -9,6 +9,7 @@ Repository ini berisi tentang source code yang menampilkan prototype website pag
 3. [Contact Us Page](contact.html)
 4. [Simulasi Pemesanan Page](simulasi.html)
 5. [Produk Page](produk.html)
+6. [Prototipe Simulasi Pemesanan](simulasi.py)
 
 ## Link Live Preview
 
