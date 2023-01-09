@@ -1,11 +1,11 @@
-harga = {"standar 30s" : int(65000),
-         "xxl 30s" : int(70000), 
-         "xxxl 30s" : int(75000), 
-         "standar 24s" : int(67000), 
-         "xxl 24s" : int(72000), 
-         "xxxl 24s" : int(77000), 
+harga = {"standar 30s" : int(50000),
+         "xxl 30s" : int(55000), 
+         "xxxl 30s" : int(60000), 
+         "standar 24s" : int(55000), 
+         "xxl 24s" : int(60000), 
+         "xxxl 24s" : int(65000), 
          "warna" : int(2000), 
-         "plastisol" : int(2500)
+         "plastisol" : int(5000)
          }
 
 def main():
@@ -23,14 +23,14 @@ def main():
             ukxxl = int(input("Masukkan jumlah kaos ukuran XXL                  :"))
             ukxxxl = int(input("Masukkan jumlah kaos ukuran XXXL                 :"))
 
-            jwdes = int(input("Masukkan jumlah warna desain (Minimal 3 warna)   :"))
+            jwdes = int(input("Masukkan jumlah warna desain (Minimal 1 warna)   :"))
             jenka = str(input("Masukkan Jenis Bahan Kaos (30s/24s)              :"))
             jensa = str(input("Masukkan jenis sablon kaos (rubber/plastisol)    :"))
 
-            perhitungan1 = ((harga["standar 30s"]+(harga["warna"]*(jwdes-2)))*(uks+ukm+ukl+ukxl))+((harga["xxl 30s"]+(harga["warna"]*(jwdes-2)))*ukxxl)+((harga["xxxl 30s"]+(harga["warna"]*(jwdes-2)))*ukxxxl)
-            perhitungan2 = ((harga["standar 24s"]+(harga["warna"]*(jwdes-2)))*(uks+ukm+ukl+ukxl))+((harga["xxl 24s"]+(harga["warna"]*(jwdes-2)))*ukxxl)+((harga["xxxl 24s"]+(harga["warna"]*(jwdes-2)))*ukxxxl)
-            perhitungan3 = (((harga["standar 30s"]+harga["plastisol"])+(harga["warna"]*(jwdes-2)))*(uks+ukm+ukl+ukxl))+(((harga["xxl 30s"]+harga["plastisol"])+(harga["warna"]*(jwdes-2)))*ukxxl)+(((harga["xxxl 30s"]+harga["plastisol"])+(harga["warna"]*(jwdes-2)))*ukxxxl)
-            perhitungan4 = (((harga["standar 24s"]+harga["plastisol"])+(harga["warna"]*(jwdes-2)))*(uks+ukm+ukl+ukxl))+(((harga["xxl 24s"]+harga["plastisol"])+(harga["warna"]*(jwdes-2)))*ukxxl)+(((harga["xxxl 24s"]+harga["plastisol"])+(harga["warna"]*(jwdes-2)))*ukxxxl)
+            perhitungan1 = ((harga["standar 30s"]+(harga["warna"]*(jwdes)))*(uks+ukm+ukl+ukxl))+((harga["xxl 30s"]+(harga["warna"]*(jwdes)))*ukxxl)+((harga["xxxl 30s"]+(harga["warna"]*(jwdes)))*ukxxxl)
+            perhitungan2 = ((harga["standar 24s"]+(harga["warna"]*(jwdes)))*(uks+ukm+ukl+ukxl))+((harga["xxl 24s"]+(harga["warna"]*(jwdes)))*ukxxl)+((harga["xxxl 24s"]+(harga["warna"]*(jwdes)))*ukxxxl)
+            perhitungan3 = (((harga["standar 30s"]+harga["plastisol"])+(harga["warna"]*(jwdes)))*(uks+ukm+ukl+ukxl))+(((harga["xxl 30s"]+harga["plastisol"])+(harga["warna"]*(jwdes)))*ukxxl)+(((harga["xxxl 30s"]+harga["plastisol"])+(harga["warna"]*(jwdes)))*ukxxxl)
+            perhitungan4 = (((harga["standar 24s"]+harga["plastisol"])+(harga["warna"]*(jwdes)))*(uks+ukm+ukl+ukxl))+(((harga["xxl 24s"]+harga["plastisol"])+(harga["warna"]*(jwdes)))*ukxxl)+(((harga["xxxl 24s"]+harga["plastisol"])+(harga["warna"]*(jwdes)))*ukxxxl)
         except ValueError:
             print("\nXXXXXXXXXXXXXXXX Input salah format XXXXXXXXXXXXXXXX")
             print()
