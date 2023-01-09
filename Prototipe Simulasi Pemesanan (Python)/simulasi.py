@@ -37,7 +37,7 @@ def main():
             continue
 
         if jumka == uks+ukm+ukl+ukxl+ukxxl+ukxxxl:
-            if jwdes >= 3:
+            if jwdes >= 0:
                 if jenka.lower() == "30s" and jensa.lower() == "rubber":
                     print("\n============== Hasil Estimasi Biaya Pemesanan ==============")
                     print("\nRp.",perhitungan1)
