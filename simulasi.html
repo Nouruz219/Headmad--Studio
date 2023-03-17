@@ -91,48 +91,40 @@
         <div class="row justify-content-center mt-4">
 
           <div class="col-lg-9">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form  method="post" role="form" class="php-email-form">
               
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Masukkan Jumlah Kaos" required>
+                <label>Jumlah Kaos </label><br><br> <input type="text" class="form-control" name="subject" id="jumka" placeholder="Masukkan Jumlah Kaos" required> 
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Masukkan Jumlah Kaos Ukuran S" required>
+                <label>Jumlah Kaos Ukuran S </label> <br><br> <input type="text" class="form-control" name="subject" id="uks" placeholder="Masukkan Jumlah Kaos Ukuran S" required> 
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Masukkan Jumlah Kaos Ukuran M" required>
+                <label>Jumlah Kaos Ukuran M  </label><br><br><input type="text" class="form-control" name="subject" id="ukm" placeholder="Masukkan Jumlah Kaos Ukuran M" required>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Masukkan Jumlah Kaos Ukuran L" required>
+                <label>Jumlah Kaos Ukuran L </label><br><br><input type="text" class="form-control" name="subject" id="ukl" placeholder="Masukkan Jumlah Kaos Ukuran L" required> 
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Masukkan Jumlah Kaos Ukuran XL" required>
+                <label>Jumlah Kaos Ukuran XL </label><br><br><input type="text" class="form-control" name="subject" id="ukxl" placeholder="Masukkan Jumlah Kaos Ukuran XL" required> 
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Masukkan Jumlah Kaos Ukuran XXL" required>
+                <label>Jumlah Kaos Ukuran XXL </label><br><br><input type="text" class="form-control" name="subject" id="ukxxl" placeholder="Masukkan Jumlah Kaos Ukuran XXL" required> 
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Masukkan Jumlah Kaos Ukuran XXXL" required>
+                <label>Jumlah Kaos Ukuran XXXL </label><br><br><input type="text" class="form-control" name="subject" id="ukxxxl" placeholder="Masukkan Jumlah Kaos Ukuran XXXL" required> 
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Masukkan Jumlah Warna Desain (Minimal 1 Warna)" required>
+                <label>Jumlah Warna Desain Kaos</label><br><br><input type="text" class="form-control" name="subject" id="jwdes" placeholder="Masukkan Jumlah Warna Desain (Minimal 1 Warna)" required>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Masukkan Jenis Bahan Kaos (30s/24s)" required>
+                <label>Jenis Bahan Kaos (30s atau 24s) </label><br><br><input type="text" class="form-control" name="subject" id="jenka" placeholder="Masukkan Jenis Bahan Kaos (30s/24s)" required> 
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Masukkan Jenis Sablon Kaos (Rubber/Plastisol)" required>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Hasil" disabled>
+                <label>Jenis Sablon kaos (rubber atau plastisol)</label><br><br><input type="text" class="form-control" name="subject" id="jensa" placeholder="Masukkan Jenis Sablon Kaos (Rubber/Plastisol)" required> 
               </div>
               
-              <div class="my-3">
-                <div class="loading">Tunggu Sebentar</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Terima Kasih! Pesan anda telah dikirm.</div>
-              </div>
-              <div class="text-center"><button type="submit">Simulasi</button></div>
+              <div class="text-center"><br><button onclick="returnSimulasi()" type="submit">Simulasi</button></div>
             </form>
           </div><!-- End Contact Form -->
 
@@ -164,6 +156,57 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    function returnSimulasi(){
+      let s30s = "50000";
+      let xxl30s = "55000";
+      let xxxl30s = "60000";
+      let s24s = "55000";
+      let xxl24s = "60000";
+      let xxxl24s = "65000";
+      let warna = "2000";
+      let plastisol = "5000";
+
+      let jumka = document.getElementById("jumka").value;
+      let uks = document.getElementById("uks").value;
+      let ukm = document.getElementById("ukm").value;
+      let ukl = document.getElementById("ukl").value;
+      let ukxl = document.getElementById("ukxl").value;
+      let ukxxl = document.getElementById("ukxxl").value;
+      let ukxxxl = document.getElementById("ukxxxl").value;
+
+      let jwdes = document.getElementById("jwdes").value;
+      let jenka = document.getElementById("jenka").value;
+      let jensa = document.getElementById("jensa").value;
+      
+      let perhitungan1 = ((Number(s30s)+(Number(warna)*Number(jwdes)))*(Number(uks)+Number(ukm)+Number(ukl)+Number(ukxl)))+((Number(xxl30s)+(Number(warna)*Number(jwdes)))*(Number(ukxxl)))+((Number(xxxl30s))+(Number(warna)*Number(jwdes))*Number(ukxxxl));
+      let perhitungan2 = ((Number(s24s)+(Number(warna)*Number(jwdes)))*(Number(uks)+Number(ukm)+Number(ukl)+Number(ukxl)))+((Number(xxl24s)+(Number(warna)*Number(jwdes)))*(Number(ukxxl)))+((Number(xxxl24s))+(Number(warna)*Number(jwdes))*Number(ukxxxl));
+      let perhitungan3 = (((Number(s30s)+Number(plastisol))+(Number(warna)*(Number(jwdes))))*(Number(uks)+Number(ukm)+Number(ukl)+Number(ukxl)))+(((Number(xxl30s)+Number(plastisol))+(Number(warna)*jwdes))*Number(ukxxl))+(((Number(xxxl30s)+Number(plastisol))+(Number(warna)*Number(jwdes)))*Number(ukxxxl));
+      let perhitungan4 = (((Number(s24s)+Number(plastisol))+(Number(warna)*(Number(jwdes))))*(Number(uks)+Number(ukm)+Number(ukl)+Number(ukxl)))+(((Number(xxl24s)+Number(plastisol))+(Number(warna)*jwdes))*Number(ukxxl))+(((Number(xxxl24s)+Number(plastisol))+(Number(warna)*Number(jwdes)))*Number(ukxxxl));
+
+      if (Number(jumka) == Number(uks)+Number(ukm)+Number(ukl)+Number(ukxl)+Number(ukxxl)+Number(ukxxxl)) {
+        if (Number(jwdes) >= 1) {
+          if (String(jenka).toLowerCase() == "30s" && String(jensa).toLocaleLowerCase() == "rubber") {
+            alert("Estimasi Harga Pemesanan1: "+perhitungan1)
+          } else if (String(jenka).toLocaleLowerCase() == "30s" && String(jensa).toLocaleLowerCase() == "plastisol") {
+            alert("Estimasi Harga Pemesanan3: "+perhitungan3)
+          } else if (String(jenka).toLocaleLowerCase() == "24s" && String(jensa).toLocaleLowerCase() == "rubber") {
+            alert("Estimasi Harga Pemesanan2: "+perhitungan2)
+          } else if (String(jenka).toLocaleLowerCase() == "24s" && String(jensa).toLocaleLowerCase() == "plastisol") {
+            alert("Estimasi Harga Pemesanan4: "+perhitungan4)
+          } else {
+            alert ("input anda salah")
+          }
+        } else {
+          alert ("Input anda salah")
+        } 
+      } else {
+        alert("Jumlah kaos dengan ukuran tidak sama")
+      }
+
+    }
+  </script>
 
 </body>
 
